@@ -1,0 +1,191 @@
+.service-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.service-serial {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.serial-badge {
+    padding: 8px 16px;
+    background: white;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-primary-600);
+    border: 1px solid var(--border-light);
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-open {
+    background: var(--color-error-100);
+    color: var(--color-error-600);
+}
+
+.status-in-progress {
+    background: var(--color-warning-100);
+    color: var(--color-warning-600);
+}
+
+.status-completed {
+    background: var(--color-primary-100);
+    color: var(--color-primary-600);
+}
+
+.status-returned {
+    background: var(--color-success-100);
+    color: var(--color-success-600);
+}
+
+.service-menu-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-medium);
+    background: white;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.service-menu-btn:hover {
+    background: var(--color-primary-50);
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-600);
+}
+
+.service-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.service-complaint {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.complaint-icon {
+    color: var(--color-primary-500);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.complaint-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.service-timeline {
+    display: flex;
+    gap: 24px;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.timeline-item.completed {
+    color: var(--color-success-600);
+}
+
+.service-footer {
+    padding: 20px 24px;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+}
+
+.report-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.report-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.report-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-tertiary);
+}
+
+.report-value {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.report-replace {
+    color: var(--color-error-600);
+}
+
+.report-serviceable {
+    color: var(--color-success-600);
+}
+
+.report-pending {
+    color: var(--text-secondary);
+}
+
+.action-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}

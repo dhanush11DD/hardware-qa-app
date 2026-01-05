@@ -1,0 +1,210 @@
+.delivery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.filter-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.filter-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: white;
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.filter-stat-card.active {
+    border-color: var(--color-primary-500);
+    background: linear-gradient(135deg, var(--color-primary-50), white);
+}
+
+.filter-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.filter-neutral .filter-icon {
+    background: var(--color-neutral-100);
+    color: var(--color-neutral-600);
+}
+
+.filter-green .filter-icon {
+    background: var(--color-success-100);
+    color: var(--color-success-600);
+}
+
+.filter-amber .filter-icon {
+    background: var(--color-warning-100);
+    color: var(--color-warning-600);
+}
+
+.filter-red .filter-icon {
+    background: var(--color-error-100);
+    color: var(--color-error-600);
+}
+
+.filter-stat-card:hover .filter-icon {
+    transform: scale(1.1);
+}
+
+.filter-content {
+    flex: 1;
+}
+
+.filter-count {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.filter-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+/* Table */
+.delivery-table-container {
+    overflow: hidden;
+}
+
+.delivery-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.delivery-table thead {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.delivery-table th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+}
+
+.delivery-table tbody tr {
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.2s ease;
+    animation: slideUp 0.4s ease-out backwards;
+}
+
+.delivery-table tbody tr:hover {
+    background: var(--bg-secondary);
+}
+
+.delivery-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.delivery-table td {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.serial-cell {
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--color-primary-600);
+}
+
+.customer-cell {
+    font-weight: 500;
+}
+
+.date-cell {
+    color: var(--text-secondary);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-delivered {
+    background: var(--color-success-100);
+    color: var(--color-success-700);
+}
+
+.status-pending {
+    background: var(--color-warning-100);
+    color: var(--color-warning-600);
+}
+
+.status-returned {
+    background: var(--color-error-100);
+    color: var(--color-error-600);
+}
+
+.details-btn {
+    padding: 6px 16px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--color-primary-600);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.details-btn:hover {
+    background: var(--color-primary-50);
+}
+
+.empty-table {
+    padding: 64px 24px;
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.empty-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.empty-subtext {
+    font-size: 14px;
+    color: var(--text-tertiary);
+}

@@ -1,66 +1,86 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { TrendingUp, CheckCircle2, Clock, Package } from 'lucide-react';
+import './dashboard.css';
 
 export default function Home() {
+  const stats = [
+    {
+      label: 'Boards in Inventory',
+      value: '1,240',
+      change: '+12% from last month',
+      icon: Package,
+      color: 'blue'
+    },
+    {
+      label: 'Tests Completed Today',
+      value: '85',
+      change: '98% Pass Rate',
+      icon: CheckCircle2,
+      color: 'green'
+    },
+    {
+      label: 'Pending Delivery',
+      value: '14',
+      change: 'Scheduled for tomorrow',
+      icon: Clock,
+      color: 'amber'
+    },
+    {
+      label: 'Active Service Tickets',
+      value: '3',
+      change: '2 in progress',
+      icon: TrendingUp,
+      color: 'purple'
+    },
+  ];
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="dashboard-container animate-fade-in">
+      {/* Header */}
+      <div className="dashboard-header">
+        <div>
+          <h1 className="dashboard-title">Dashboard</h1>
+          <p className="dashboard-subtitle">Overview of your hardware testing pipeline</p>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <button className="btn btn-primary">
+          + New Bulk Test
+        </button>
+      </div>
+
+      {/* Stats Grid */}
+      <div className="stats-grid">
+        {stats.map((stat, index) => {
+          const Icon = stat.icon;
+          return (
+            <div key={stat.label} className={`stat-card stagger-item stat-${stat.color}`}>
+              <div className="stat-icon-wrapper">
+                <Icon size={24} className="stat-icon" />
+              </div>
+              <div className="stat-content">
+                <p className="stat-label">{stat.label}</p>
+                <h3 className="stat-value">{stat.value}</h3>
+                <p className="stat-change">{stat.change}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Recent Activity */}
+      <div className="activity-section card animate-slide-up">
+        <div className="activity-header">
+          <h3 className="activity-title">Recent Activity</h3>
+          <button className="btn btn-ghost">View All</button>
         </div>
-      </main>
+        <div className="activity-content">
+          <div className="empty-state">
+            <div className="empty-icon">📊</div>
+            <p className="empty-text">No recent activity to display</p>
+            <p className="empty-subtext">Activity will appear here as you use the system</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
